@@ -79,7 +79,6 @@
               img = null
           })
           .catch(function (error) {
-              // error 503 Object { error: "Model kuhs/cats_classficiation is currently loading", estimated_time: 20 }1
               if (error.response.status === 503) {
                   //503 is service unavaiulable
                   huggingFaceLoading = true;
@@ -120,15 +119,17 @@
 {/each}
 
 {#if winnerWinnerChickenDinner === 'Durchfahrt'}
-  <p>The winning class is Durchfahrt with a high confidence!</p>
+  <p>Das Ziel ist es, ohne eine Berührung durch die mit einem Schweizerkreuz gekennzeichnete Durchfahrt zu gelangen, dies ergibt die Höchstpunktzahl von 10 Punkten. Die Durchfahrt besteht aus 6 Rohren (Brückenpfeiler-Markierungen) die an einem Seil herunterhängen. Die Distanz zwischen den Rohren beträgt 2,5 m. Werden die Rohre mit dem Boot oder Ruder berührt, ergibt dies einen Punktabzug je Berührung. Wird ein Rohr mit dem Joch (Spitze des Schiffes) berührt, zählt die nächst tiefere Ziel Note markiert mit „8“ oder „6“. Wird eine Hilfsmarkierung mit den Händen berührt oder fällt diese gar ins Schiff, wird dies mit Punkteabzügen geahndet. </p>
 {:else if winnerWinnerChickenDinner === 'Ziellandung'}
-  <p>The winning class is Ziellandung, but be careful, the confidence is not very high!</p>
+  <p>Das Schiff ist so zu steuern, dass es mit dem Vorderteil (Bug) flussaufwärts gerichtet, ohne Aufprallen am Ufer anlegt. Die Landung hat in Parallelstellung zu erfolgen. Massgebend für die Ziellandung ist immer die landseitige vordere Joch Ecke des Schiffes. Das Schweizerkreuz symbolisiert zugleich die Höchstnote 10. Nachdem der 1. Stachel im Wasser ist, darf sich das Schiff im Maximum ½ Punkt zu Gunsten der Ziel Note verschieben. </p>
 {:else if winnerWinnerChickenDinner === 'Pfeiler'}
-  <p>The winning class is Pfeiler, but the confidence is very low. You might want to double-check this!</p>
+  <p>Die Durchfahrt besteht aus 6 Rohren (Brückenpfeiler-Markierungen) die an einem Seil herunterhängen. Die Distanz zwischen den Rohren beträgt 2,5 m. Werden die Rohre mit dem Boot oder Ruder berührt, ergibt dies einen Punktabzug je Berührung. Wird ein Rohr mit dem Joch (Spitze des Schiffes) berührt, zählt die nächst tiefere Ziel Note markiert mit „8“ oder „6“. Wird eine Hilfsmarkierung mit den Händen berührt oder fällt diese gar ins Schiff, wird dies mit Punkteabzügen geahndet.</p>
 {:else if winnerWinnerChickenDinner === 'Abfahrtsstange'}
-  <p>The winning class is Abfahrtsstange, but the confidence is extremely low. It's a good idea to verify this result!</p>
+  <p>Die Stange ist in verschiedene Felder aufgeteilt, zu sehen an den farblich unterschiedlichen Markierungen. Im äußersten Feld ist ein sogenannter Lappen montiert. Wird dieser mit der Spitze des Schiffes berührt, erhält das Fahrerpaar die Höchstpunktzahl von 10 Punkten. Wird der Lappen nicht berührt, wird vom Land aus mit Hilfe einer fahrbaren Skalierung die Distanz zur Stange im äußersten Feld gemessen. Je nach gemessener Distanz werden die Punkte verteilt. Wird die Stange jedoch berührt, erhält das Fahrerpaar Punktabzüge. Im ersten Feld vom Land aus sind dies 4 Punkte, im zweiten sind es 3 Punkte, im dritten sind es 2 Punkte und im äußersten Feld, wo auch der Lappen hängt, ist es 1 Punkt.
+
+  </p>
 {:else}
-  <p>The winning class is unknown. Please check the value of winnerWinnerChickenDinner!</p>
+  <p>The winning class is unknown. Please check the provided image!</p>
 {/if}
 
 {/if}

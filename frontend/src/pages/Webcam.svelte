@@ -60,8 +60,8 @@
     }
     
     function predict(data) {
-      let url =
-          "https://api-inference.huggingface.co/models/kuhs/cats_classficiation";
+        let url =
+      "https://api-inference.huggingface.co/models/fatzetob/Ponti_Object_Classification";
       axios
           .post(
               url,
@@ -69,7 +69,7 @@
               {
                   headers: {
                       Authorization:
-                          "Bearer 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",
+                          "Bearer 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",
                   },
               }
           )
@@ -80,7 +80,6 @@
               prediction = JSON.stringify(response.data);
           })
           .catch(function (error) {
-              // error 503 Object { error: "Model kuhs/cats_classficiation is currently loading", estimated_time: 20 }1
               if (error.response.status === 503) {
                   //503 is service unavaiulable
                   huggingFaceLoading = true;
@@ -88,6 +87,8 @@
                   console.log(error.response.data);
                   console.log(error.response.status);
                   console.log(error.response.headers);
+                  setTimeout(() => predict(data), (estimatedTime + 5) * 1000); // Retry after estimated time + 5 seconds
+
               } else if (error.request) {
                   // The request was made but no response was received
                   // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
