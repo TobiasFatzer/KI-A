@@ -35,7 +35,7 @@
     <div>
         <h6>Images Collected</h6>
         <p>
-            The Images are stored on a seperate Harddrive. To be able to hand them in they have been deployed to a Google Drive.
+            The Images are stored on a seperate Harddrive. To be able to hand them in they have been deployed to a Google Drive. (https://drive.google.com/file/d/1wDPz4U41xDKRTSQnGk0nvzEoQh7y5sFo/view?usp=sharing)
         </p>
     </div>
     <div>
